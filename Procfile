@@ -1,0 +1,1 @@
+web: gunicorn dekusu.wsgi --log-file -
