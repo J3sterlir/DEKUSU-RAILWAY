@@ -10,8 +10,8 @@ document.addEventListener("DOMContentLoaded", function () {
             const isDark = body.classList.contains('dark-mode');
             darkModeToggle.textContent = isDark ? '☾' : '☀︎';
             logo.src = isDark
-                ? '/images/dekusu logo(Dark).png'
-                : '/images/dekusu logo.png';
+                ? 'app/static/app/images/dekusu logo(Dark).png'
+                : 'app/static/app/images/dekusu logo.png';
         });
     }
 
