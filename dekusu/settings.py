@@ -26,8 +26,14 @@ SECRET_KEY = 'django-insecure-vk78@-=ss@$%30jcswm+y1uz7jqiibte5ekkrcz4k+65f16czf
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+RAILWAY_PUBLIC_DOMAIN = os.getenv('RAILWAY_PUBLIC_DOMAIN', '')
 ALLOWED_HOSTS = []
-
+if RAILWAY_PUBLIC_DOMAIN:
+    ALLOWED_HOSTS.append(RAILWAY_PUBLIC_DOMAIN)
+    ALLOWED_HOSTS.append(f'.{RAILWAY_PUBLIC_DOMAIN}')
+    
+if DEBUG:
+    ALLOWED_HOSTS.extend(['localhost', '127.0.0.1'])
 
 # Application definition
 
