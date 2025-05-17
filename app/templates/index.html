@@ -29,6 +29,10 @@
                 <form method="post" action="{% url 'index' %}">
                     {% csrf_token %}
                     
+                    {% if messages %} {% for message in messages %}
+                    {{ message }}
+                    {% endfor %} {% endif %}
+
                     <label for="email">Email</label>
                     <input type="email" id="email" name="email" placeholder="ignatius@gbox.adnu.edu.ph" required>
 
