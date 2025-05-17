@@ -13,6 +13,7 @@ nav {
     border-radius: 1000px;
     margin: 20px;
     transition: 0.1s ease;
+    
 }
 
 .nav_contents {
@@ -42,7 +43,6 @@ nav {
     -webkit-box-shadow: 4px 4px 7px -5px rgba(0,0,0,0.75) inset;
     -moz-box-shadow: 4px 4px 7px -5px rgba(0,0,0,0.75) inset;
     width: fit-content;
-    display: inline;
 }
 
 .nav_contents a {
@@ -71,6 +71,7 @@ nav {
 .nav_contents li:not(:hover) .nav-text {
     display: none;
 }
+
 .dark-mode nav{
     background: #F6D784;
     background: linear-gradient(90deg,rgba(246, 215, 132, 1) 42%, rgba(66, 85, 149, 1) 100%);
