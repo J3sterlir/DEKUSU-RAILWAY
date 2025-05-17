@@ -6,7 +6,6 @@ from .models import Announcement
 from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
 from .models import UserProfile
-from django.shortcuts import redirect
 
 def login_view(request):
     if request.method == 'POST':
@@ -31,15 +30,13 @@ def login_view(request):
     return render(request, 'index.html', {'form': form})
 def dashboard_guest(request):
     return render(request, 'dashboard(guest).html')
-@login_required
 def dashboard(request):
     return render(request, 'dashboard.html')
-@login_required
 def map_view(request):
     return render(request, 'map.html')
 def map_guest(request):
     return render(request, 'map(guest).html')
-@login_required
+
 def profile(request):
     try:
         user_profile = UserProfile.objects.get(user=request.user)
