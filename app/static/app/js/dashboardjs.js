@@ -1,31 +1,17 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Get current page filename
-    const currentPage = window.location.pathname.split('/').pop() || 'dashboard'; // Adjusted to match URL structure
-
-    // Function to handle hover effects
-    function handleHover(link, isHovering) {
-        const textSpan = link.querySelector('.nav-text');
-        if (isHovering) {
-            link.style.width = 'fit-content';
-            if (textSpan) {
-                textSpan.style.display = 'inline';
-            }
-        } else {
-            link.style.width = '40px';
-            if (textSpan) {
-                textSpan.style.display = 'none';
-            }
-        }
-    }
-
+    const currentPage = window.location.pathname.split('/').pop() || 'dashboard.html';
+    
     // Check each nav link
     document.querySelectorAll('.nav_contents li a').forEach(link => {
         const linkPage = link.getAttribute('href').split('/').pop();
         
-        // Set active state on parent li if the link matches the current page
         if (linkPage === currentPage) {
+            // Set active state on parent li
             link.parentElement.classList.add('active');
-            link.parentElement.style.width = 'fit-content'; // Ensure active item is fully expanded
+            
+            // Force expanded state for active item
+            link.parentElement.style.width = 'fit-content';
             const textSpan = link.querySelector('.nav-text');
             if (textSpan) {
                 textSpan.style.display = 'inline';
@@ -35,13 +21,22 @@ document.addEventListener('DOMContentLoaded', function() {
         // Handle hover effects
         link.parentElement.addEventListener('mouseenter', function() {
             if (!this.classList.contains('active')) {
-                handleHover(this, true);
+                this.style.width = 'fit-content';
+                this.style.backgroundColor = '';
+                const textSpan = this.querySelector('.nav-text');
+                if (textSpan) {
+                    textSpan.style.display = 'inline';
+                }
             }
         });
         
         link.parentElement.addEventListener('mouseleave', function() {
             if (!this.classList.contains('active')) {
-                handleHover(this, false);
+                this.style.width = '40px';
+                const textSpan = this.querySelector('.nav-text');
+                if (textSpan) {
+                    textSpan.style.display = 'none';
+                }
             }
         });
     });
@@ -53,13 +48,9 @@ const body = document.body;
 
 darkModeToggle.addEventListener('click', () => {
     body.classList.toggle('dark-mode');
-});
-
-document.getElementById('visitorform').addEventListener('submit', function(e) {
-    e.preventDefault();
-
-    const form = document.getElementById('Purpose').value;
-    if (form){
-        window.location.href = 'Pages/dashboard(guest).html';
+    if (body.classList.contains('dark-mode')) {
+        darkModeToggle.textContent = '☾';
+    } else {
+        darkModeToggle.textContent = '☀︎';
     }
 });
