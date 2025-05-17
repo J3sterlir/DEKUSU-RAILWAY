@@ -42,6 +42,7 @@ nav {
     -webkit-box-shadow: 4px 4px 7px -5px rgba(0,0,0,0.75) inset;
     -moz-box-shadow: 4px 4px 7px -5px rgba(0,0,0,0.75) inset;
     width: fit-content;
+    display: inline;
 }
 
 .nav_contents a {
