@@ -94,3 +94,9 @@ nav {
 .dark-mode .nav_contents li.active{
     background-color: #C1A64A;
 }
+
+@media (max-width: 480px) {
+    .nav-textshow {
+        display: none;
+    }
+}

@@ -122,9 +122,6 @@ article{
         display: inline-block;
         padding: 0px 0px;
     }
-    .nav-textshow{
-        display: none;
-    }
     a{
         border-radius: 20px;
         padding: 10px 6px;
