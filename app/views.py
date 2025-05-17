@@ -6,14 +6,15 @@ from .models import Announcement
 from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
 from .models import UserProfile
-from django.http import Http404
+from django.shortcuts import redirect
 
 def custom_login_required(view_func):
     def _wrapped_view(request, *args, **kwargs):
         if request.user.is_authenticated:
             return view_func(request, *args, **kwargs)
         else:
-            raise Http404("Page not found")
+            messages.error(request, "You must be logged in to access this page.")
+            return redirect('index')
     return _wrapped_view
 
 def login_view(request):
@@ -42,12 +43,12 @@ def dashboard_guest(request):
 @login_required
 def dashboard(request):
     return render(request, 'dashboard.html')
-@custom_login_required
+@login_required
 def map_view(request):
     return render(request, 'map.html')
 def map_guest(request):
     return render(request, 'map(guest).html')
-@custom_login_required
+@login_required
 def profile(request):
     try:
         user_profile = UserProfile.objects.get(user=request.user)
