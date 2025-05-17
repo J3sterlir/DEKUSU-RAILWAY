@@ -2,24 +2,23 @@
 const darkModeToggle = document.getElementById('darkModeToggle');
 const body = document.body;
 
-// Check if dark mode was previously enabled
-const isDarkMode = localStorage.getItem('darkMode') === 'true';
-
-// Apply dark mode if it was enabled
-if (isDarkMode) {
+// Check for existing dark mode preference in sessionStorage
+if (sessionStorage.getItem('darkMode') === 'enabled') {
     body.classList.add('dark-mode');
-    darkModeToggle.textContent = '⏾';
+    darkModeToggle.textContent = '☾'; // Change icon to indicate dark mode is active
 }
 
+// Event listener for the toggle button
 darkModeToggle.addEventListener('click', () => {
     body.classList.toggle('dark-mode');
     
+    // Check if dark mode is enabled and save preference
     if (body.classList.contains('dark-mode')) {
-        darkModeToggle.textContent = '⏾';
-        localStorage.setItem('darkMode', 'true');
+        darkModeToggle.textContent = '☾'; // Change icon to indicate dark mode is active
+        sessionStorage.setItem('darkMode', 'enabled'); // Save preference
     } else {
-        darkModeToggle.textContent = '☀';
-        localStorage.setItem('darkMode', 'false');
+        darkModeToggle.textContent = '☀︎'; // Change icon to indicate light mode
+        sessionStorage.setItem('darkMode', 'disabled'); // Save preference
     }
 });
 
