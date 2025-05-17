@@ -37,7 +37,7 @@ nav {
     background-color: #97C4EF;
     width: fit-content;
 }
-.nav_contents li.active {
+.activenav-text {
     background-color: #0B6FD1;
     box-shadow: 4px 4px 7px -5px rgba(0,0,0,0.75) inset;
     -webkit-box-shadow: 4px 4px 7px -5px rgba(0,0,0,0.75) inset;
