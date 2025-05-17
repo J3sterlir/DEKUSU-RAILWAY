@@ -13,7 +13,6 @@ nav {
     border-radius: 1000px;
     margin: 20px;
     transition: 0.1s ease;
-    
 }
 
 .nav_contents {
@@ -37,7 +36,7 @@ nav {
     background-color: #97C4EF;
     width: fit-content;
 }
-.activenav-text {
+.nav_contents li.active {
     background-color: #0B6FD1;
     box-shadow: 4px 4px 7px -5px rgba(0,0,0,0.75) inset;
     -webkit-box-shadow: 4px 4px 7px -5px rgba(0,0,0,0.75) inset;
