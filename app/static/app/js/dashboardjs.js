@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Get current page filename
-    const currentPage = window.location.pathname.split('/').pop() || 'dashboard.html';
-    console.log('Current Page:', currentPage); // Debugging line
+    const currentPage = window.location.pathname.split('/').pop() || 'dashboard'; // Adjusted to match URL structure
 
     // Function to handle hover effects
     function handleHover(link, isHovering) {
@@ -22,7 +21,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Check each nav link
     document.querySelectorAll('.nav_contents li a').forEach(link => {
         const linkPage = link.getAttribute('href').split('/').pop();
-        console.log('Link Page:', linkPage); // Debugging line
         
         // Set active state on parent li if the link matches the current page
         if (linkPage === currentPage) {
@@ -47,4 +45,21 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+});
+
+// Toggle dark mode
+const darkModeToggle = document.getElementById('darkModeToggle');
+const body = document.body;
+
+darkModeToggle.addEventListener('click', () => {
+    body.classList.toggle('dark-mode');
+});
+
+document.getElementById('visitorform').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const form = document.getElementById('Purpose').value;
+    if (form){
+        window.location.href = 'Pages/dashboard(guest).html';
+    }
 });
