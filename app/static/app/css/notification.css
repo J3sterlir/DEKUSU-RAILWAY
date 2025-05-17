@@ -86,7 +86,7 @@ article{
 .dark-mode article{
     border-radius: 15px;
     padding: 15px;
-    margin: 5px;
+    margin: 15px;
     background: #000000;
     background: linear-gradient(180deg,rgba(0, 0, 0, 0.21) 24%, rgba(186, 160, 71, 0.6) 100%);
     font-family: "Titillium Web";
