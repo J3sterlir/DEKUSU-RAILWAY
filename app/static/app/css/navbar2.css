@@ -100,3 +100,8 @@ nav {
         display: none;
     }
 }
+@media (max-width: 1043px){
+    .nav_contents{
+        margin: 5px;
+    }
+}
