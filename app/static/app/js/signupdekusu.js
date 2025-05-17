@@ -1,19 +1,27 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Toggle dark mode
-    const darkModeToggle = document.getElementById('darkModeToggle');
-    const body = document.body;
-    const logo = document.getElementById('Logo');
+// Toggle dark mode
+const darkModeToggle = document.getElementById('darkModeToggle');
+const body = document.body;
 
-    if (darkModeToggle && logo) {
-        darkModeToggle.addEventListener('click', () => {
-            body.classList.toggle('dark-mode');
-            const isDark = body.classList.contains('dark-mode');
-            darkModeToggle.textContent = isDark ? '☾' : '☀︎';
-            logo.src = isDark
-                ? '/static/app/images/dekusu logo(Dark).png'
-                : '/static/app/images/dekusu logo.png';
-        });
+// Check for existing dark mode preference in sessionStorage
+if (sessionStorage.getItem('darkMode') === 'enabled') {
+    body.classList.add('dark-mode');
+    darkModeToggle.textContent = '☾'; // Change icon to indicate dark mode is active
+}
+
+// Event listener for the toggle button
+darkModeToggle.addEventListener('click', () => {
+    body.classList.toggle('dark-mode');
+    
+    // Check if dark mode is enabled and save preference
+    if (body.classList.contains('dark-mode')) {
+        darkModeToggle.textContent = '☾'; // Change icon to indicate dark mode is active
+        sessionStorage.setItem('darkMode', 'enabled'); // Save preference
+    } else {
+        darkModeToggle.textContent = '☀︎'; // Change icon to indicate light mode
+        sessionStorage.setItem('darkMode', 'disabled'); // Save preference
     }
+});
 
     // Visitor Modal Popup
     const visitorBtn = document.getElementById("visitor");
