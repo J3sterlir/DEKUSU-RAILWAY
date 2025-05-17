@@ -28,10 +28,6 @@
                 
                 <form method="post" action="{% url 'index' %}">
                     {% csrf_token %}
-                    
-                    {% if messages %} {% for message in messages %}
-                    {{ message }}
-                    {% endfor %} {% endif %}
 
                     <label for="email">Email</label>
                     <input type="email" id="email" name="email" placeholder="ignatius@gbox.adnu.edu.ph" required>
@@ -47,9 +43,9 @@
                     </div>
 
                     {% if form.errors %}
-                    <div class="error-message">
-                        Invalid email or password
-                    </div>
+                        {% if messages %} {% for message in messages %}
+                        {{ message }}
+                        {% endfor %} {% endif %}
                     {% endif %}
                 </form>
             </div>
