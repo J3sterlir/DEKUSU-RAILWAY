@@ -27,7 +27,13 @@ SECRET_KEY = 'django-insecure-vk78@-=ss@$%30jcswm+y1uz7jqiibte5ekkrcz4k+65f16czf
 DEBUG = True
 
 RAILWAY_PUBLIC_DOMAIN = os.getenv('RAILWAY_PUBLIC_DOMAIN', '')
-ALLOWED_HOSTS = []
+
+ALLOWED_HOSTS = ['dekusu-railway-production.up.railway.app']
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://dekusu-railway-production.up.railway.app',
+]
+
 if RAILWAY_PUBLIC_DOMAIN:
     ALLOWED_HOSTS.append(RAILWAY_PUBLIC_DOMAIN)
     ALLOWED_HOSTS.append(f'.{RAILWAY_PUBLIC_DOMAIN}')
@@ -84,12 +90,19 @@ WSGI_APPLICATION = 'dekusu.wsgi.application'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 DATABASES = {
-    'default': dj_database_url.config(
-        default=os.getenv('DATABASE_URL'),
-        conn_max_age=600,
-        ssl_require=True
-    )
-}
+       'default': {
+           'ENGINE': 'django.db.backends.postgresql',
+           'NAME': 'railway',
+           'USER': 'postgres',
+           'PASSWORD': 'RZkgngIkTCCfNNuzhFPTxzsjsqMoGLnZ',
+           'HOST': 'switchback.proxy.rlwy.net',
+           'PORT': '27837',
+       }
+   }
+
+print(DATABASES)
+
+
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')

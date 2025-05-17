@@ -32,7 +32,6 @@ def dashboard_guest(request):
     return render(request, 'dashboard(guest).html')
 def dashboard(request):
     return render(request, 'dashboard.html')
-
 def map_view(request):
     return render(request, 'map.html')
 def map_guest(request):
