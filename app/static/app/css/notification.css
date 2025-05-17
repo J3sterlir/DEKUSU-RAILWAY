@@ -41,7 +41,7 @@ body{
 article{
     border-radius: 15px;
     padding: 15px;
-    margin: 5px;
+    margin: 15px;
     background: linear-gradient(0deg,rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 32%, rgba(232, 232, 232, 0.541) 100%);
     font-family: "Titillium Web";
     border-style: solid;
@@ -52,11 +52,11 @@ article{
 }
 .dark-mode-btn {
     position: absolute;
-    top: 5rem;
+    top: 4.5rem;
     right: 25px;
     background: none;
     border: none;
-    font-size: 40px;
+    font-size: 35px;
     cursor: pointer;
     color: #222222a9;
     transition: all 0.3s ease;
@@ -104,17 +104,8 @@ article{
         font-family: 'Times New Roman', Times, serif;
         font-weight:bolder;
         text-align: center;
-        font-size: 3.5rem;
-    }
-}
-
-@media (max-width: 1043px) {
-    h2{
-        align-items: center;
-        font-family: 'Times New Roman', Times, serif;
-        font-weight:bolder;
-        text-align: center;
-        font-size: 3.5rem;
+        font-size: 1.8rem;
+        margin-bottom: 5px;
     }
 }
 
@@ -124,14 +115,17 @@ article{
         font-family: 'Times New Roman', Times, serif;
         font-weight:bolder;
         text-align: center;
-        font-size: 3rem;
+        font-size: 2rem;
+        margin-bottom: 5px;
     }
     .nav_contents li{
         display: inline-block;
         padding: 0px 0px;
     }
+    .nav-textshow{
+        display: none;
+    }
     a{
-        background-color: #5094D7;
         border-radius: 20px;
         padding: 10px 6px;
         align-items: center;
