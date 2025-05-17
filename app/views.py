@@ -8,15 +8,6 @@ from django.contrib.auth.decorators import login_required
 from .models import UserProfile
 from django.shortcuts import redirect
 
-def custom_login_required(view_func):
-    def _wrapped_view(request, *args, **kwargs):
-        if request.user.is_authenticated:
-            return view_func(request, *args, **kwargs)
-        else:
-            messages.error(request, "You must be logged in to access this page.")
-            return redirect('index')
-    return _wrapped_view
-
 def login_view(request):
     if request.method == 'POST':
         form = LoginForm(request.POST)
