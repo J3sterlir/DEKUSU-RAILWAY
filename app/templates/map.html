@@ -63,25 +63,25 @@
     
     <div class="map">
         <img src="{% static 'app/images/ADNU_MAP_ORIGINAL.webp' %}" alt="ADNU Map">
-        <img src="{% static 'app/images/Buildings/4 Pillars.webp' %}" alt="Building 1" class="overlay marker1" onclick="showSidebar('4 Pillars Info')">
-        <img src="{% static 'app/images/Buildings/Gym.webp' %}" alt="Building 2" class="overlay marker2">
-        <img src="{% static 'app/images/Buildings/Bonoan.webp' %}" alt="Building 3" class="overlay marker3">
-        <img src="{% static 'app/images/Buildings/Library.webp' %}" alt="Building 4" class="overlay marker4"> <!---->
-        <img src="{% static 'app/images/Buildings/Alingal.webp' %}" alt="Building 5" class="overlay marker5">   <!---->
-        <img src="{% static 'app/images/Buildings/RF Hall.webp' %}" alt="Building 6" class="overlay marker6">   <!---->
-        <img src="{% static 'app/images/Buildings/Arrupe.webp' %}" alt="Building 7" class="overlay marker7">   <!---->
-        <img src="{% static 'app/images/Buildings/Phelan.webp' %}" alt="Building 8" class="overlay marker8">   <!---->
-        <img src="{% static 'app/images/Buildings/Santos.webp' %}" alt="Building 9" class="overlay marker9">   <!---->
-        <img src="{% static 'app/images/Buildings/Burns.webp' %}" alt="Building 10" class="overlay marker10"> <!---->
-        <img src="{% static 'app/images/Buildings/Madrigal.webp' %}" alt="Building 11" class="overlay marker11"> <!---->
-        <img src="{% static 'app/images/Buildings/Xavier Hall.webp' %}" alt="Building 12" class="overlay marker12"> <!---->
-        <img src="{% static 'app/images/Buildings/Church.webp' %}" alt="Building 13" class="overlay marker13"> <!---->
-        <img src="{% static 'app/images/Buildings/Dolan.webp' %}" alt="Building 14" class="overlay marker14"> <!---->
-        <img src="{% static 'app/images/Buildings/Engineering Building.webp' %}" alt="Building 15" class="overlay marker15"> <!---->
-        <img src="{% static 'app/images/Buildings/shs building.webp' %}" alt="Building 16" class="overlay marker16"> <!---->
-        <img src="{% static 'app/images/Buildings/CC.webp' %}" alt="Building 17" class="overlay marker17"> <!---->
-        <img src="{% static 'app/images/Buildings/PPA.webp' %}" alt="Building 18" class="overlay marker18"> <!---->
-        <img src="{% static 'app/images/Buildings/Adriatico.webp' %}" alt="Building 19" class="overlay marker19"> <!---->
+        <img src="{% static 'app/images/Buildings/4 Pillars.webp' %}" alt="Building 1" class="overlay marker1" onclick="showmapdetails()">
+        <img src="{% static 'app/images/Buildings/Gym.webp' %}" alt="Building 2" class="overlay marker2" onclick="showmapdetails()">
+        <img src="{% static 'app/images/Buildings/Bonoan.webp' %}" alt="Building 3" class="overlay marker3" onclick="showmapdetails()">
+        <img src="{% static 'app/images/Buildings/Library.webp' %}" alt="Building 4" class="overlay marker4" onclick="showmapdetails()"> <!---->
+        <img src="{% static 'app/images/Buildings/Alingal.webp' %}" alt="Building 5" class="overlay marker5" onclick="showmapdetails()">   <!---->
+        <img src="{% static 'app/images/Buildings/RF Hall.webp' %}" alt="Building 6" class="overlay marker6" onclick="showmapdetails()">   <!---->
+        <img src="{% static 'app/images/Buildings/Arrupe.webp' %}" alt="Building 7" class="overlay marker7" onclick="showmapdetails()">   <!---->
+        <img src="{% static 'app/images/Buildings/Phelan.webp' %}" alt="Building 8" class="overlay marker8" onclick="showmapdetails()">   <!---->
+        <img src="{% static 'app/images/Buildings/Santos.webp' %}" alt="Building 9" class="overlay marker9" onclick="showmapdetails()">   <!---->
+        <img src="{% static 'app/images/Buildings/Burns.webp' %}" alt="Building 10" class="overlay marker10" onclick="showmapdetails()"> <!---->
+        <img src="{% static 'app/images/Buildings/Madrigal.webp' %}" alt="Building 11" class="overlay marker11" onclick="showmapdetails()"> <!---->
+        <img src="{% static 'app/images/Buildings/Xavier Hall.webp' %}" alt="Building 12" class="overlay marker12" onclick="showmapdetails()"> <!---->
+        <img src="{% static 'app/images/Buildings/Church.webp' %}" alt="Building 13" class="overlay marker13" onclick="showmapdetails()"> <!---->
+        <img src="{% static 'app/images/Buildings/Dolan.webp' %}" alt="Building 14" class="overlay marker14" onclick="showmapdetails()"> <!---->
+        <img src="{% static 'app/images/Buildings/Engineering Building.webp' %}" alt="Building 15" class="overlay marker15" onclick="showmapdetails()"> <!---->
+        <img src="{% static 'app/images/Buildings/shs building.webp' %}" alt="Building 16" class="overlay marker16" onclick="showmapdetails()"> <!---->
+        <img src="{% static 'app/images/Buildings/CC.webp' %}" alt="Building 17" class="overlay marker17" onclick="showmapdetails()"> <!---->
+        <img src="{% static 'app/images/Buildings/PPA.webp' %}" alt="Building 18" class="overlay marker18" onclick="showmapdetails()"> <!---->
+        <img src="{% static 'app/images/Buildings/Adriatico.webp' %}" alt="Building 19" class="overlay marker19" onclick="showmapdetails()"> <!---->
     </div>
 
         <button id="darkModeToggle" class="dark-mode-btn">☀</button>
@@ -90,7 +90,7 @@
             <div class="details-container">
                 <span class="close-btn" id="closemapdetails">&times;</span>
                 <h2 class="BLDGNAME">
-                    Building Name: <span id="BLDG-NAME"></span>
+                    Building Name:
                 </h2>
                 <img class="Bldgimage" src="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png">
                 <article>
