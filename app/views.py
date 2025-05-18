@@ -1,10 +1,9 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .forms import LoginForm
 from .models import Announcement
-from django.contrib.auth import logout
-from django.contrib.auth.decorators import login_required
 from .models import UserProfile
 
 def login_view(request):
@@ -26,24 +25,26 @@ def login_view(request):
             messages.error(request, "Invalid form submission")
     else:
         form = LoginForm()  # Empty form for GET requests
-
     return render(request, 'index.html', {'form': form})
 def dashboard_guest(request):
     return render(request, 'dashboard(guest).html')
+@login_required()
 def dashboard(request):
     return render(request, 'dashboard.html')
+@login_required()
 def map_view(request):
     return render(request, 'map.html')
 def map_guest(request):
     return render(request, 'map(guest).html')
 
+@login_required()
 def profile(request):
     try:
         user_profile = UserProfile.objects.get(user=request.user)
     except UserProfile.DoesNotExist:
         user_profile = None
     return render(request, 'profile.html', {'user_profile': user_profile})
-
+@login_required()
 def notifications(request):
     announcements = Announcement.objects.order_by('-date_posted')
     return render(request, 'notification.html', {'announcements': announcements})
