@@ -1,6 +1,6 @@
 header{
     position: sticky;
-    top: 0;
+    top: 20px;
     transition: 0.1s ease;
 }
 nav {
