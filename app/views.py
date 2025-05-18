@@ -28,23 +28,23 @@ def login_view(request):
     return render(request, 'index.html', {'form': form})
 def dashboard_guest(request):
     return render(request, 'dashboard(guest).html')
-@login_required()
+@login_required(login_url='index')
 def dashboard(request):
     return render(request, 'dashboard.html')
-@login_required()
+@login_required(login_url='index')
 def map_view(request):
     return render(request, 'map.html')
 def map_guest(request):
     return render(request, 'map(guest).html')
 
-@login_required()
+@login_required(login_url='index')
 def profile(request):
     try:
         user_profile = UserProfile.objects.get(user=request.user)
     except UserProfile.DoesNotExist:
         user_profile = None
     return render(request, 'profile.html', {'user_profile': user_profile})
-@login_required()
+@login_required(login_url='index')
 def notifications(request):
     announcements = Announcement.objects.order_by('-date_posted')
     return render(request, 'notification.html', {'announcements': announcements})
