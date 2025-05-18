@@ -5,6 +5,7 @@ from django.contrib import messages
 from .forms import LoginForm
 from .models import Announcement
 from .models import UserProfile
+from django.views.decorators.cache import never_cache
 
 def login_view(request):
     if request.method == 'POST':
@@ -28,15 +29,17 @@ def login_view(request):
     return render(request, 'index.html', {'form': form})
 def dashboard_guest(request):
     return render(request, 'dashboard(guest).html')
+@never_cache
 @login_required(login_url='index')
 def dashboard(request):
     return render(request, 'dashboard.html')
+@never_cache
 @login_required(login_url='index')
 def map_view(request):
     return render(request, 'map.html')
 def map_guest(request):
     return render(request, 'map(guest).html')
-
+@never_cache
 @login_required(login_url='index')
 def profile(request):
     try:
@@ -44,6 +47,7 @@ def profile(request):
     except UserProfile.DoesNotExist:
         user_profile = None
     return render(request, 'profile.html', {'user_profile': user_profile})
+@never_cache
 @login_required(login_url='index')
 def notifications(request):
     announcements = Announcement.objects.order_by('-date_posted')
