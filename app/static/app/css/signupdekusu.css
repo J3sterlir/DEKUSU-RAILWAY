@@ -257,12 +257,15 @@ input {
     .logo {
         width: 300px;
         margin-bottom: 20px;
+        margin-right: 50px;
+        margin-top: -90px;
     }
 
     .login-box {
         width: 70%;
         padding: 15px;
-        margin-top: 0; 
+        margin-top: 0;
+        margin-top: -250px;
     }
 
     .dark-mode .container {
@@ -272,11 +275,14 @@ input {
     .dark-mode .logo {
         width: 300px;
         margin-bottom: 20px;
+        margin-right: 50px;
+        margin-top: -90px;
     }
 
     .dark-mode .login-box {
-        width: 80%;
+        width: 70%;
         padding: 15px;
-        margin-top: 0; 
+        margin-top: 0;
+        margin-top: -250px;
     }
 }
