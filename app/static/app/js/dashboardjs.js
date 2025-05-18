@@ -42,6 +42,28 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+// Display Map Over
+function showmapdetails() {
+    const modal = document.getElementById('mapdetails');
+    modal.style.display = 'block';
+}
+// Hide Map Over
+function hidemapdetails() {
+    const modal = document.getElementById('mapdetails');
+    modal.style.display = 'none';
+}
+// Close map Over
+document.getElementById('closemapdetails').addEventListener('click', hidemapdetails);
+  // Hide modal when clicking outside modal content
+window.addEventListener('click', function(event) {
+    const modal = document.getElementById('mapdetails');
+    if (event.target === modal) {
+      hidemapdetails();
+    }
+});
+
+document.getElementById('BLDG-NAME').textContent = 'Building1';
+
 // Toggle dark mode
 const darkModeToggle = document.getElementById('darkModeToggle');
 const body = document.body;
