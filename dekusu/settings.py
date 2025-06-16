@@ -28,10 +28,10 @@ DEBUG = True
 
 RAILWAY_PUBLIC_DOMAIN = os.getenv('RAILWAY_PUBLIC_DOMAIN', '')
 
-ALLOWED_HOSTS = ['dekusu-railway-production.up.railway.app']
+ALLOWED_HOSTS = ['dekusu-railway.onrender.com']
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://dekusu-railway-production.up.railway.app',
+    'https://dekusu-railway.onrender.com',
 ]
 
 if RAILWAY_PUBLIC_DOMAIN:
