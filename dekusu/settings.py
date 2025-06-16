@@ -92,11 +92,11 @@ WSGI_APPLICATION = 'dekusu.wsgi.application'
 DATABASES = {
        'default': {
            'ENGINE': 'django.db.backends.postgresql',
-           'NAME': 'railway',
-           'USER': 'postgres',
-           'PASSWORD': 'RZkgngIkTCCfNNuzhFPTxzsjsqMoGLnZ',
-           'HOST': 'switchback.proxy.rlwy.net',
-           'PORT': '27837',
+           'NAME': 'dekusu-database',
+           'USER': 'root',
+           'PASSWORD': 'xnXVbseFQzqgNeBefPwa0Vctm2JYSruZ',
+           'HOST': 'dpg-d17t4s95pdvs738pgfug-a',
+           'PORT': '5432',
        }
    }
 
